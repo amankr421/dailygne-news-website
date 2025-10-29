@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DailyGNE - Latest News Updates</title>
+    <link rel="stylesheet" href="latestnews.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="nav-container">
+            <div class="logo">
+                <div class="logo">
+                    <img src="logo.png" alt="DailyGNE Logo" class="logo-img">
+                </div>
+                <span>DailyGNE</span>
+            </div>
+            
+            <nav class="nav">
+                <ul class="nav-list">
+                    <li><a href="#" class="nav-link active" data-category="trending">🔥 Trending</a></li>
+                    <li><a href="#" class="nav-link" data-category="breaking">🚨 Breaking</a></li>
+                    <li><a href="#" class="nav-link" data-category="india">🇮🇳 India</a></li>
+                    <li><a href="#" class="nav-link" data-category="world">🌍 World</a></li>
+                    <li><a href="#" class="nav-link" data-category="technology">💻 Tech</a></li>
+                    <li class="dropdown">
+                        <a href="#" class="nav-link">📂 More <i class="fas fa-chevron-down"></i></a>
+                        <ul class="dropdown-menu">
+                            <div class="dropdown-columns">
+                                <div class="dropdown-column">
+                                    <li><a href="#" data-category="business">💼 Business</a></li>
+                                    <li><a href="#" data-category="sports">⚽ Sports</a></li>
+                                    <li><a href="#" data-category="science">🔬 Science</a></li>
+                                    <li><a href="#" data-category="health">❤️ Health</a></li>
+                                    <li><a href="#" data-category="entertainment">🎬 Entertainment</a></li>
+                                </div>
+                                <div class="dropdown-column">
+                                    <li><a href="#" data-category="bollywood">🎭 Bollywood</a></li>
+                                    <li><a href="#" data-category="politics">🏛️ Politics</a></li>
+                                    <li><a href="#" data-category="education">🎓 Education</a></li>
+                                    <li><a href="#" data-category="environment">🌱 Environment</a></li>
+                                    <li><a href="#" data-category="startup">🚀 Startup</a></li>
+                                </div>
+                                <div class="dropdown-column">
+                                    <li><a href="#" data-category="ai">🤖 AI & ML</a></li>
+                                    <li><a href="#" data-category="mobile">📱 Mobile</a></li>
+                                    <li><a href="#" data-category="laptop">💻 Laptops</a></li>
+                                    <li><a href="#" data-category="space">🚀 Space</a></li>
+                                    <li><a href="#" data-category="gadgets360">📱 Gadgets</a></li>
+                                </div>
+                            </div>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+            
+            <div class="header-actions">
+                <div class="search-container">
+                    <input type="text" class="search-input" placeholder="Search news..." id="searchInput">
+                    <button class="search-btn"><i class="fas fa-search"></i></button>
+                </div>
+                <button class="theme-toggle" id="themeToggle">
+                    <i class="fas fa-moon"></i>
+                </button>
+                <button class="mobile-menu-toggle" id="mobileMenuToggle">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!--Hero Section -->
+    <section class="hero">
+        <div class="hero-background">
+            <div class="hero-particles"></div>
+            <div class="hero-gradient"></div>
+        </div>
+        <div class="hero-container">
+            <div class="hero-content">
+                <div class="hero-badge">
+                    <span>🚀 Latest Updates</span>
+                </div>
+                <h1 class="hero-title">
+                    Stay <span class="highlight">Informed</span> with 
+                    <span class="brand-glow">DailyGNE</span>
+                </h1>
+                <p class="hero-subtitle">
+                    Your gateway to comprehensive news coverage from India and across the globe. 
+                    Real-time updates, trusted sources, and AI-powered insights.
+                </p>
+                <div class="hero-actions">
+                    <button class="btn btn-primary" id="exploreBtn">
+                        <i class="fas fa-compass"></i>
+                        Explore News
+                    </button>
+                    <button class="btn btn-secondary" onclick="loadNewsByCategory('breaking')">
+                        <i class="fas fa-bolt"></i>
+                        Breaking News
+                    </button>
+                </div>
+                
+                <div class="hero-features">
+                    <div class="feature">
+                        <i class="fas fa-bolt"></i>
+                        <span>Live Updates</span>
+                    </div>
+                    <div class="feature">
+                        <i class="fas fa-shield-alt"></i>
+                        <span>Trusted Sources</span>
+                    </div>
+                    <div class="feature">
+                        <i class="fas fa-robot"></i>
+                        <span>AI Powered</span>
+                    </div>
+                    <div class="feature">
+                        <i class="fas fa-mobile-alt"></i>
+                        <span>Mobile First</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="hero-visual">
+                <div class="floating-cards">
+                    <div class="floating-card card-1">
+                        <div class="card-content">
+                            <h4>Breaking News</h4>
+                            <p>Global Summit Reaches Climate Agreement</p>
+                        </div>
+                    </div>
+                    <div class="floating-card card-2">
+                        <div class="card-content">
+                            <h4>Tech Update</h4>
+                            <p>AI Breakthrough Revolutionizes Industry</p>
+                        </div>
+                    </div>
+                    <div class="floating-card card-3">
+                        <div class="card-content">
+                            <h4>Sports</h4>
+                            <p>Championship Finals This Weekend</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main class="main">
+        <div class="main-container">
+            <!-- Category Filter -->
+            <div class="category-filter">
+                <h2 class="section-title">
+                    <img src="logo.png" alt="DailyGNE Logo" class="news-logo">
+                    Latest News
+                    <span class="live-indicator">
+                        <span class="pulse"></span>
+                        LIVE
+                    </span>
+                </h2>
+                <div class="category-tags" id="categoryTags">
+                    <!-- Categories will be populated by JavaScript -->
+                </div>
+            </div>
+
+            <!-- Loading Spinner -->
+            <div class="loading-spinner" id="loadingSpinner">
+                <div class="spinner-container">
+                    <div class="spinner"></div>
+                    <div class="spinner-ring"></div>
+                </div>
+                <p>Loading latest news...</p>
+            </div>
+
+            <!-- Error Message -->
+            <div class="error-message" id="errorMessage" style="display: none;">
+                <i class="fas fa-exclamation-triangle"></i>
+                <h3>Something went wrong</h3>
+                <p id="errorText">Failed to load news. Please try again later.</p>
+                <button class="btn btn-primary" onclick="loadTrendingNews()">
+                    <i class="fas fa-redo"></i>
+                    Try Again
+                </button>
+            </div>
+
+            <!-- News Grid -->
+            <div class="news-grid" id="newsGrid">
+                <!-- News cards will be populated by JavaScript -->
+                <div class="news-card">
+                    <div class="news-image">
+                        <img src="https://via.placeholder.com/400x220" alt="News Image">
+                        <div class="news-category">TECHNOLOGY</div>
+                    </div>
+                    <div class="news-content">
+                        <h3 class="news-title">AI Revolution Transforms Healthcare Industry Worldwide</h3>
+                        <p class="news-description">Artificial intelligence is making breakthroughs in medical diagnosis and treatment, promising to revolutionize patient care across the globe.</p>
+                        <div class="news-meta">
+                            <div class="news-source">
+                                <div class="source-logo">NN</div>
+                                <span>DailyGNE</span>
+                            </div>
+                            <span class="news-time">2 hours ago</span>
+                        </div>
+                        <a href="#" class="read-more">
+                            Read Full Story
+                            <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="news-card">
+                    <div class="news-image">
+                        <img src="https://via.placeholder.com/400x220" alt="News Image">
+                        <div class="news-category">POLITICS</div>
+                    </div>
+                    <div class="news-content">
+                        <h3 class="news-title">Global Leaders Gather for Climate Summit in New York</h3>
+                        <p class="news-description">World leaders convene to discuss urgent climate action plans and set new targets for carbon emission reductions by 2030.</p>
+                        <div class="news-meta">
+                            <div class="news-source">
+                                <div class="source-logo">NN</div>
+                                <span>DailyGNE</span>
+                            </div>
+                            <span class="news-time">5 hours ago</span>
+                        </div>
+                        <a href="#" class="read-more">
+                            Read Full Story
+                            <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="news-card">
+                    <div class="news-image">
+                        <img src="https://via.placeholder.com/400x220" alt="News Image">
+                        <div class="news-category">SPORTS</div>
+                    </div>
+                    <div class="news-content">
+                        <h3 class="news-title">Indian Cricket Team Secures Historic Victory Against Australia</h3>
+                        <p class="news-description">In a thrilling match that went down to the final over, Team India clinched a memorable win in the test series against Australia.</p>
+                        <div class="news-meta">
+                            <div class="news-source">
+                                <div class="source-logo">NN</div>
+                                <span>DailyGNE</span>
+                            </div>
+                            <span class="news-time">1 day ago</span>
+                        </div>
+                        <a href="#" class="read-more">
+                            Read Full Story
+                            <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Load More Button -->
+            <div class="load-more-container">
+                <button class="btn btn-outline" id="loadMoreBtn">
+                    <i class="fas fa-plus"></i>
+                    Load More News
+                </button>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="logo">
+                        <div class="logo-icon">
+                            <img src="logo.png" alt="DailyGNE Logo" class="logo-img">
+                        </div>
+                        <span>DailyGNE</span>
+                    </div>
+                    <p>Your trusted source for comprehensive news coverage from India and around the world. 
+                       Delivering real-time updates with AI-powered insights.</p>
+                    <div class="developer-credit">
+                        <p>Developed with ❤️ by <strong>AMAN KUMAR</strong></p>
+                    </div>
+                    <div class="social-links">
+                        <a href="https://www.linkedin.com/in/aman-kumar-216bbb255" target="_blank" class="social-link linkedin">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
+                        <a href="https://x.com/AmanKumar41235" target="_blank" class="social-link twitter">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="https://www.instagram.com/mr_aman421" target="_blank" class="social-link instagram">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="https://github.com/amankr421" class="social-link github">
+                            <i class="fab fa-github"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Quick Categories</h3>
+                    <ul>
+                        <li><a href="#" data-category="breaking">🚨 Breaking News</a></li>
+                        <li><a href="#" data-category="india">🇮🇳 India</a></li>
+                        <li><a href="#" data-category="world">🌍 World</a></li>
+                        <li><a href="#" data-category="technology">💻 Technology</a></li>
+                        <li><a href="#" data-category="sports">⚽ Sports</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Explore More</h3>
+                    <ul>
+                        <li><a href="#" data-category="business">💼 Business</a></li>
+                        <li><a href="#" data-category="science">🔬 Science</a></li>
+                        <li><a href="#" data-category="health">❤️ Health</a></li>
+                        <li><a href="#" data-category="entertainment">🎬 Entertainment</a></li>
+                        <li><a href="#" data-category="politics">🏛️ Politics</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Contact & Support</h3>
+                    <div class="contact-info">
+                        <p><i class="fas fa-envelope"></i> contact@DailyGNE.com</p>
+                        <p><i class="fas fa-phone"></i> +91 7545062547</p>
+                        <p><i class="fas fa-map-marker-alt"></i> Gaya Bihar, India</p>
+                    </div>
+                    <div class="newsletter-mini">
+                        <p>Get daily updates</p>
+                        <div class="mini-form">
+                            <input type="email" placeholder="Your email">
+                            <button type="submit"><i class="fas fa-paper-plane"></i></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 DailyGNE. All rights reserved. | Crafted by <strong>AMAN KUMAR</strong></p>
+                <div class="footer-links">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                    <a href="#">Cookie Policy</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="latestnews.js"></script>
+</body>
+</html>
